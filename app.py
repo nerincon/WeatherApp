@@ -27,16 +27,14 @@ class MainHandler(TemplateHandler):
     page = page + '.html'
     city = self.get_query_argument('city', None)
     weather_data = None
-    message = "Please put in city name"
     if city:
-      payload = {'q': city, 'APPID':'02485176f4257a69383d168ccf8c169c'}
+      payload = {'q': city, 'APPID':'02485176f4257a69383d168ccf8c169c', 'units':'imperial'}
       r = requests.get('https://api.openweathermap.org/data/2.5/weather', params=payload)
       weather_data = r.json()
     self.set_header(
       'Cache-Control',
       'no-store, no-cache, must-revalidate, max-age=0')
-    self.render_template(page, {'weather_data': weather_data, 'message':message})
-
+    self.render_template(page, {'weather_data': weather_data})
 
 
 def make_app():
