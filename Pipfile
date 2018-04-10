@@ -10,6 +10,8 @@ name = "pypi"
 requests = "*"
 tornado = "*"
 "jinja2" = "*"
+"psycopg2" = "*"
+ipython = "*"
 
 
 [dev-packages]

@@ -25,10 +25,9 @@
             <ul>
                 <li>City: {{ weather_data['name']}}</li>
                 <li>Temp: {{ weather_data['main']['temp']}} F</li>
-                <li>Description: {{ weather_data['weather'][0]['description']}}</li>
-                <li>Temp: {{ weather_data['main']['temp']}} F</li>
                 <li>Temp Min: {{ weather_data['main']['temp_min']}} F</li>
                 <li>Temp Max: {{ weather_data['main']['temp_max']}} F</li>
+                <li>Description: {{ weather_data['weather'][0]['description']}}</li>
                 <li>Wind Speed: {{ weather_data['wind']['speed']}} mph</li>
             </ul>
         {% endif %}
