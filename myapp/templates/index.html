@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/index.css">
-    <title>Weather App</title>
-</head>
-<body>
-    <div class='wrapper'>
-        <div class="pic">
-            <img src="/static/img/weather.jpg">
-        </div>
-        <h1 class='light' >Weather Info</h1>
-        <br></br>
-        <form action="/" method="GET">
-            <input class='ipt' name= "city" type="text" placeholder="City Name">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+        <link rel="stylesheet" href="/static/css/index.css">
+        <title>Weather App</title>
+    </head>
+    <body>
+        <div class='wrapper'>
+            <div class="pic">
+                <img src="/static/img/weather.jpg">
+            </div>
+            <h1 class='light' >Weather Info</h1>
             <br></br>
-            <button class='btn' type="submit">Get Weather</button>
-        </form>
-        <br></br>
-        {% if weather_data_db %}
-            <ul>
-                <li>City: {{ weather_data_db[0] }}</li>
-                <li>Temp: {{ weather_data_db[1] }} F</li>
-                <li>Temp Min: {{ weather_data_db[2] }} F</li>
-                <li>Temp Max: {{ weather_data_db[3]}} F</li>
-                <li>Description: {{ weather_data_db[4]}}</li>
-                <li>Wind Speed: {{ weather_data_db[5] }} mph</li>
-            </ul>
-        {% endif %}
-    </div>
-
-
-</body>
+            <form action="/" method="GET">
+                <input class='ipt' name= "city" type="text" placeholder="City Name">
+                <br></br>
+                <button class='btn' type="submit">Get Weather</button>
+            </form>
+            <br></br>
+            {% if weather_data_db %}
+                <ul>
+                    <li>City: {{ weather_data_db[0] }}</li>
+                    <li>Temp: {{ weather_data_db[1] }} F</li>
+                    <li>Temp Min: {{ weather_data_db[2] }} F</li>
+                    <li>Temp Max: {{ weather_data_db[3]}} F</li>
+                    <li>Description: {{ weather_data_db[4]}}</li>
+                    <li>Wind Speed: {{ weather_data_db[5] }} mph</li>
+                </ul>
+            {% endif %}
+        </div>
+    </body>
 </html>

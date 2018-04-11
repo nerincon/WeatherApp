@@ -30,7 +30,6 @@ class MainHandler(TemplateHandler):
     self.set_header(
       'Cache-Control',
       'no-store, no-cache, must-revalidate, max-age=0')
-
     page = page + '.html'
     city = self.get_query_argument('city', None)
     timeDelta = datetime.timedelta(minutes=15)
@@ -75,8 +74,8 @@ class MainHandler(TemplateHandler):
         self.render_template(page, {'weather_data_db': weather_data_db})
     cur.close()
     conn.close()
-    self.render_template(page, {})
-    
+    if not weather_data:
+      self.render_template(page, {})
 
 
 def make_app():
