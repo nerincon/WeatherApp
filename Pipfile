@@ -7,11 +7,10 @@ name = "pypi"
 
 [packages]
 
+tornado = "==5.0.2"
 requests = "*"
-tornado = "*"
 "jinja2" = "*"
 "psycopg2" = "*"
-ipython = "*"
 
 
 [dev-packages]
@@ -19,3 +18,5 @@ ipython = "*"
 
 
 [requires]
+
+python_version = "3.6"
