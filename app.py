@@ -34,7 +34,7 @@ class MainHandler(TemplateHandler):
     city = self.get_query_argument('city', None)
     timeDelta = datetime.timedelta(minutes=15)
     weather_data = None
-    conn = psycopg2.connect("dbname=weather_db user=postgres")
+    conn = psycopg2.connect(os.environ.get('DATABASE_URL', 'postgres://postgres@localhost:5432/weather_db'))
     cur = conn.cursor()
     if city:
       payload = {'q': city, 'APPID':'02485176f4257a69383d168ccf8c169c', 'units':'imperial'}
