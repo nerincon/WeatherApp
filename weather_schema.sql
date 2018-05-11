@@ -6,3 +6,4 @@ CREATE TABLE info (
   description VARCHAR,
   wind_speed VARCHAR,
   time_stamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
